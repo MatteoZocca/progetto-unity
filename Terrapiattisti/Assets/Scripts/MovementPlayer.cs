@@ -9,12 +9,6 @@ public class MovementPlayer : MonoBehaviour
     float speed = 5;
     Vector3 vettoreMovimento; // vettore che indica la direzione del movimento
 
-    void Start()
-    {
-        GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
-        // freeza la rotazione del personaggio, tiene sempre i piedi rivolti verso la terra.
-    }
-
     void Update()
     {
         float movementX = Input.GetAxis("Horizontal"); //salvo input asse X
