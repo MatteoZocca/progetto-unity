@@ -11,6 +11,7 @@ public class BodyAttracted : MonoBehaviour
     void Start()
     {
         this.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
+        this.GetComponent<Rigidbody>().useGravity = false;
         // freeza la rotazione dell'elemento, tiene sempre i piedi rivolti verso la terra.
     }
 
