@@ -6,7 +6,7 @@ public class MovementPlayer : MonoBehaviour
 {
     // variabile velocità
     [SerializeField] // compare nell'Inspector, anche public lo fa, con la differenza che la rende visibile ad altre classi.
-    float speed = 5;
+    float speed = 100;
     Vector3 vettoreMovimento; // vettore che indica la direzione del movimento
 
     void Update()
