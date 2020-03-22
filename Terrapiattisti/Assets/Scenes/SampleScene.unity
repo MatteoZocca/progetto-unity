@@ -1412,6 +1412,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  rotationspeed: 5
 --- !u!136 &628081412
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1529,7 +1530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystick: {fileID: 1804888945}
   rjoystick: {fileID: 502105346}
-  speed: 10
+  velocita: 5
 --- !u!4 &656441758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5202732821079344928, guid: cebfacc247a640945a2c30b442202fca,
@@ -3668,6 +3669,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Astronauta
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0119aeb2f8f5fc54da9f0fa03e0770ca, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0119aeb2f8f5fc54da9f0fa03e0770ca, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3678,7 +3683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0119aeb2f8f5fc54da9f0fa03e0770ca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0.262
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0119aeb2f8f5fc54da9f0fa03e0770ca, type: 3}
       propertyPath: m_LocalRotation.x
