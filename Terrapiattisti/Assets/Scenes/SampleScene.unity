@@ -1394,7 +1394,7 @@ GameObject:
   - component: {fileID: 628081418}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1531,6 +1531,7 @@ MonoBehaviour:
   joystick: {fileID: 1804888945}
   rjoystick: {fileID: 502105346}
   velocita: 5
+  rotationspeed: 5
 --- !u!4 &656441758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5202732821079344928, guid: cebfacc247a640945a2c30b442202fca,
