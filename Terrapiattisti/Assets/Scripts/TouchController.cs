@@ -16,7 +16,6 @@ public class TouchController : MonoBehaviour
     private Quaternion cambiorotazione;
     private Transform astronauta;
     private GameObject parentrigidbody;
-    private bool isRotating;
     bool giratoav = true;
     bool giratosx = false;
     bool giratodx = false;
@@ -32,10 +31,10 @@ public class TouchController : MonoBehaviour
     {
         float movementX = joystick.Horizontal; //salvo input asse X
         float movementY = joystick.Vertical; // salvo input asse Y
-        
-        if(Mathf.Abs(movementX) > Mathf.Abs(movementY))
+
+        if (Mathf.Abs(movementX) > Mathf.Abs(movementY))
         {
-            if(movementX < 0 && !isRotating)
+            if(movementX < 0)
             {
                 if (!giratosx)
                 {
@@ -43,11 +42,13 @@ public class TouchController : MonoBehaviour
                     giratodt = false;
                     giratoav = false;
                     giratodx = false;
+                    rjoystick.enabled = false;
+                    rjoystick.AxisOptions = AxisOptions.Vertical;
                     cambiorotazione = Quaternion.LookRotation(parentrigidbody.transform.right * -1, parentrigidbody.transform.up);
-                    StartCoroutine(PerformRotation(cambiorotazione, () => { isRotating = false; }));
+                    StartCoroutine(PerformRotation(cambiorotazione, () => { rjoystick.enabled = true; }));
                 }
             }
-            else if(movementX > 0 && !isRotating)
+            else if(movementX > 0)
             {
                 if (!giratodx)
                 {
@@ -55,15 +56,17 @@ public class TouchController : MonoBehaviour
                     giratodt = false;
                     giratoav = false;
                     giratodt = false;
+                    rjoystick.enabled = false;
+                    rjoystick.AxisOptions = AxisOptions.Vertical;
                     cambiorotazione = Quaternion.LookRotation(parentrigidbody.transform.right, parentrigidbody.transform.up);
-                    StartCoroutine(PerformRotation(cambiorotazione, () => { isRotating = false; }));
+                    StartCoroutine(PerformRotation(cambiorotazione, () => { rjoystick.enabled = true; }));
                 }
             }
 
         }
         else
         {
-            if(movementY > 0 && !isRotating)
+            if(movementY > 0)
             {
                 if (!giratoav)
                 {
@@ -75,11 +78,13 @@ public class TouchController : MonoBehaviour
                     //StartCoroutine(PerformRotation(cambiorotazione));
                     //astronauta.rotation = Quaternion.Euler(0f, 0f, 0f);
                     //astronauta.Rotate(new Vector3(0, 180f));
+                    rjoystick.enabled = false;
+                    rjoystick.AxisOptions = AxisOptions.Horizontal;
                     cambiorotazione = Quaternion.LookRotation(parentrigidbody.transform.forward, parentrigidbody.transform.up);
-                    StartCoroutine(PerformRotation(cambiorotazione, () => { isRotating = false; }));
+                    StartCoroutine(PerformRotation(cambiorotazione, () => { rjoystick.enabled = true; }));
                 }
             }
-            else if (movementY < 0 && !isRotating)
+            else if (movementY < 0)
             {
                 if (!giratodt) // Se non è girato
                 {
@@ -89,9 +94,11 @@ public class TouchController : MonoBehaviour
                     giratodx = false;
                     //astronauta.transform.rotation = Quaternion.Slerp(astronauta.transform.rotation, cambiorotazione, 1f * rotationspeed * Time.deltaTime);
                     //cambiorotazione = astronauta.rotation * Quaternion.Euler(0, 180f, 0);
+                    rjoystick.enabled = false;
+                    rjoystick.AxisOptions = AxisOptions.Horizontal;
                     cambiorotazione = Quaternion.LookRotation(-parentrigidbody.transform.forward, parentrigidbody.transform.up);
                     //astronauta.Rotate(new Vector3(0, 180f));
-                    StartCoroutine(PerformRotation(cambiorotazione, () => { isRotating = false; }));
+                    StartCoroutine(PerformRotation(cambiorotazione, () => { rjoystick.enabled = true; }));
                 }
             }
         }
@@ -101,19 +108,28 @@ public class TouchController : MonoBehaviour
             vettoreMovimento = new Vector3(movementX, 0, 0);
 
         //this.transform.Translate(vettoreMovimento * speed * Time.deltaTime);
-        this.transform.Rotate(0, rjoystick.Horizontal * 2.5f, 0);
         this.transform.Translate(vettoreMovimento * velocita * Time.deltaTime);
     }
 
-    
+    private void LateUpdate()
+    {
+        if (rjoystick.enabled) {
+            if(giratoav || giratodt)
+                parentrigidbody.transform.Rotate(0, rjoystick.Horizontal * 2f, 0);
+            if (giratosx)
+                parentrigidbody.transform.Rotate(0, rjoystick.Vertical * 2f, 0);
+            else
+                parentrigidbody.transform.Rotate(0, rjoystick.Vertical * -2f, 0);
+        }
+            
+    }
 
-    IEnumerator PerformRotation(Quaternion targetRotation, System.Action onComplete)
+    IEnumerator PerformRotation(Quaternion targetRotation, System.Action onFinish)
     {
 
         float progress = 0f;
         while (progress < 1f)
         {
-
             astronauta.rotation = Quaternion.Slerp(astronauta.rotation, targetRotation, progress);
             progress += Time.deltaTime * rotationspeed;
 
@@ -122,6 +138,7 @@ public class TouchController : MonoBehaviour
                 yield return null;
             }
         }
-        onComplete?.Invoke();
+        rjoystick.enabled = true;
+
     }
 }
