@@ -133,14 +133,16 @@ ModelImporter:
     4300000: Cube
     7400000: metarig|Cammino
     7400002: metarig|Cammino2
-    7400004: metarig|Corsa
-    7400006: metarig|Metti In Posa
-    7400008: metarig|Posa1
-    7400010: metarig|Posa2
-    7400012: metarig|Posa3
-    7400014: metarig|Posa4
-    7400016: metarig|Posa5
-    7400018: metarig|Posa6
+    7400004: metarig|Cammino3
+    7400006: metarig|Corsa
+    7400008: metarig|Corsa2
+    7400010: metarig|Metti In Posa
+    7400012: metarig|Posa1
+    7400014: metarig|Posa2
+    7400016: metarig|Posa3
+    7400018: metarig|Posa4
+    7400020: metarig|Posa5
+    7400022: metarig|Posa6
     9500000: //RootNode
     13700000: Cube
     2186277476908879412: ImportLogs
@@ -176,7 +178,7 @@ ModelImporter:
       name: metarig|Cammino
       takeName: metarig|Cammino
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 29
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -204,7 +206,35 @@ ModelImporter:
       name: metarig|Cammino2
       takeName: metarig|Cammino2
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 29
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Cammino3
+      takeName: metarig|Cammino3
+      firstFrame: 0
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -232,7 +262,35 @@ ModelImporter:
       name: metarig|Corsa
       takeName: metarig|Corsa
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 19
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: metarig|Corsa2
+      takeName: metarig|Corsa2
+      firstFrame: 0
+      lastFrame: 17
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -288,14 +346,14 @@ ModelImporter:
       name: metarig|Posa1
       takeName: metarig|Posa1
       firstFrame: 0
-      lastFrame: 120
+      lastFrame: 155
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -435,7 +493,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
