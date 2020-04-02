@@ -24,7 +24,7 @@ public class TouchController2 : MonoBehaviour
 
         vettoreMovimento = new Vector3(ljoystick.Horizontal, 0f, ljoystick.Vertical);
         float heading = Mathf.Atan2(ljoystick.Horizontal, ljoystick.Vertical);
-        float angle = Vector3.Angle(vettoreMovimento, forwardIniziale);
+        float angle = Vector3.SignedAngle(astronauta.forward, vettoreMovimento, this.transform.up);
         
         Debug.DrawLine(this.transform.position, vettoreMovimento);
         //Debug.DrawRay(this.transform.position, vettoreMovimento, Color.red, 0.5f);
@@ -35,22 +35,9 @@ public class TouchController2 : MonoBehaviour
 
         if (ljoystick.Horizontal != 0 && ljoystick.Vertical != 0)
         {
-            Debug.Log("Angolo input: " + angle);
-            Debug.Log("Angolo attuale: " + rotazionea);
-
-            if (rotazionea.y > 0)
-            {
-                angle -= rotazionea.y;
-            }
-            else
-            {
-                angle += rotazionea.y;
-            }
+            astronauta.Rotate(new Vector3(0f, angle, 0f) * Time.deltaTime * rotaspeed);
         }
-        else
-            angle = 0;
-        astronauta.Rotate(new Vector3(0f, angle, 0f) * Time.deltaTime * rotaspeed);
-        Debug.Log("Angolo Finale: " + astronauta.transform.eulerAngles);
+
     }
 
     
