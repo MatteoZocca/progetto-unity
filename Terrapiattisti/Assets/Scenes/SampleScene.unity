@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ljoystick: {fileID: 991887447}
   astronauta: {fileID: 1044052726}
-  velocita: 5
+  velocity: 5
   rotaspeed: 5
 --- !u!4 &656441758 stripped
 Transform:
