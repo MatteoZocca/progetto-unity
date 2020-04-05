@@ -5,6 +5,7 @@ using UnityEngine;
 public class TouchController2 : MonoBehaviour
 {
     public Joystick ljoystick;
+    public Joystick rjoystick;
     public Transform astronauta;
     public float velocity = 5;
     private Vector3 vettoreMovimento;
@@ -28,6 +29,7 @@ public class TouchController2 : MonoBehaviour
         
 
         this.transform.Translate(vettoreMovimento * velocity * Time.deltaTime);
+        this.transform.Rotate(0f, rjoystick.Horizontal * 2f, 0);
 
         if (ljoystick.Horizontal != 0 && ljoystick.Vertical != 0)
         {
