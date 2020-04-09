@@ -679,6 +679,7 @@ GameObject:
   - component: {fileID: 628081416}
   - component: {fileID: 628081411}
   - component: {fileID: 628081417}
+  - component: {fileID: 628081418}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -699,6 +700,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  astronauta: {fileID: 1565177892}
+  rotaspeed: 10
 --- !u!136 &628081412
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -803,6 +806,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attrattore: {fileID: 102328170}
+--- !u!114 &628081418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628081410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d72b1f60a029a2f4cbaebdc2d99e96dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ljoystick: {fileID: 740329690}
+  rjoystick: {fileID: 1277488126}
+  astronauta: {fileID: 1565177892}
+  velocity: 5
+  rotaspeed: 10
+--- !u!114 &740329690 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 1744278782}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1277488126 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18,
+    type: 3}
+  m_PrefabInstance: {fileID: 566962787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a47f546fc70ec8428172694e78e4288, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1565177892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 10347d4a1f95b0f4cb534861a0153359,
