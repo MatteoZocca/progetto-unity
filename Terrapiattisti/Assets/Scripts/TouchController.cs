@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchController2 : MonoBehaviour
+public class TouchController : MonoBehaviour
 {
     public Joystick ljoystick;
     public Transform astronauta;
