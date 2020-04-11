@@ -131,18 +131,18 @@ ModelImporter:
     2100006: Material.004
     2100008: Material.003
     4300000: Cube
-    7400000: Cammino
-    7400002: Cammino2
-    7400004: Cammino3
-    7400006: Corsa
-    7400008: Corsa2
-    7400010: Metti In Posa
-    7400012: Posa1
-    7400014: Posa2
-    7400016: Posa3
-    7400018: Posa4
-    7400020: Posa5
-    7400022: Idle
+    7400000: metarig|Cammino
+    7400002: metarig|Cammino2
+    7400004: metarig|Cammino3
+    7400006: metarig|Corsa
+    7400008: metarig|Corsa2
+    7400010: metarig|Metti In Posa
+    7400012: metarig|Posa1
+    7400014: metarig|Posa2
+    7400016: metarig|Posa3
+    7400018: metarig|Posa4
+    7400020: metarig|Posa5
+    7400022: metarig|Posa6
     9500000: //RootNode
     13700000: Cube
     2186277476908879412: ImportLogs
@@ -175,7 +175,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Cammino
+      name: metarig|Cammino
       takeName: metarig|Cammino
       firstFrame: 0
       lastFrame: 29
@@ -203,7 +203,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cammino2
+      name: metarig|Cammino2
       takeName: metarig|Cammino2
       firstFrame: 0
       lastFrame: 29
@@ -231,7 +231,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Cammino3
+      name: metarig|Cammino3
       takeName: metarig|Cammino3
       firstFrame: 0
       lastFrame: 25
@@ -259,7 +259,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Corsa
+      name: metarig|Corsa
       takeName: metarig|Corsa
       firstFrame: 0
       lastFrame: 19
@@ -287,7 +287,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Corsa2
+      name: metarig|Corsa2
       takeName: metarig|Corsa2
       firstFrame: 0
       lastFrame: 17
@@ -315,7 +315,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Metti In Posa
+      name: metarig|Metti In Posa
       takeName: metarig|Metti In Posa
       firstFrame: 0
       lastFrame: 15
@@ -343,17 +343,17 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Posa1
+      name: metarig|Posa1
       takeName: metarig|Posa1
       firstFrame: 0
-      lastFrame: 120
+      lastFrame: 155
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -371,17 +371,17 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Posa2
+      name: metarig|Posa2
       takeName: metarig|Posa2
       firstFrame: 0
-      lastFrame: 100
+      lastFrame: 130
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -399,7 +399,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Posa3
+      name: metarig|Posa3
       takeName: metarig|Posa3
       firstFrame: 0
       lastFrame: 20
@@ -427,7 +427,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Posa4
+      name: metarig|Posa4
       takeName: metarig|Posa4
       firstFrame: 0
       lastFrame: 100
@@ -455,7 +455,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Posa5
+      name: metarig|Posa5
       takeName: metarig|Posa5
       firstFrame: 0
       lastFrame: 180
@@ -483,7 +483,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Idle
+      name: metarig|Posa6
       takeName: metarig|Posa6
       firstFrame: 0
       lastFrame: 140
@@ -493,7 +493,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
