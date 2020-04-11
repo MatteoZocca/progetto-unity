@@ -1857,6 +1857,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ljoystick: {fileID: 991887447}
+  rjoystick: {fileID: 1681621022}
   astronauta: {fileID: 1044052726}
   velocity: 5
   rotaspeed: 10
