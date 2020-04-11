@@ -2,9 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TouchController2 : MonoBehaviour
+public class TouchController : MonoBehaviour
 {
     public Joystick ljoystick;
+    public Joystick rjoystick;
     public Transform astronauta;
     public float velocity = 5;
     private Vector3 vettoreMovimento;
@@ -23,16 +24,14 @@ public class TouchController2 : MonoBehaviour
     {
 
         vettoreMovimento = new Vector3(ljoystick.Horizontal, 0f, ljoystick.Vertical);
-        float angle = Vector3.SignedAngle(astronauta.forward, vettoreMovimento, this.transform.up);
+        Vector3 vettoreRelativoPlayer = transform.TransformDirection(vettoreMovimento); //trasforma il vettore locale in globale
+        float angle = Vector3.SignedAngle(astronauta.forward, vettoreRelativoPlayer, this.transform.up);
 
-        Debug.DrawRay(this.transform.position, astronauta.forward, Color.red);
-        Debug.DrawRay(this.transform.position, vettoreMovimento, Color.blue);
-        //Debug.DrawRay(this.transform.position, vettoreMovimento, Color.red, 0.5f);
-        //astronauta.up = this.transform.up;
-        //astronauta.rotation = Quaternion.LookRotation(vettoreMovimento, this.transform.up);
+
         this.transform.Translate(vettoreMovimento * velocity * Time.deltaTime);
+        this.transform.Rotate(0f, rjoystick.Horizontal * 2f, 0);
 
-        if (ljoystick.Horizontal != 0 && ljoystick.Vertical != 0)
+        if (vettoreMovimento != Vector3.zero)
         {
             astronauta.Rotate(new Vector3(0f, angle, 0f) * Time.deltaTime * rotaspeed, Space.Self);
         }
