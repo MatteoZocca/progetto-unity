@@ -14,10 +14,10 @@ OcclusionCullingSettings:
 RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
-  m_Fog: 0
-  m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  m_Fog: 1
+  m_FogColor: {r: 0.754717, g: 0.53755784, b: 0.6390338, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.02
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 2bd8959f5fbd3644aa33af1a155fc147, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44970304, g: 0.49977225, b: 0.5756361, a: 1}
+  m_IndirectSpecularColor: {r: 0.39879197, g: 0.51621294, b: 0.74252874, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -490,13 +490,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170076733}
-  m_LocalRotation: {x: 0.46034622, y: 0.09902935, z: 0.40232754, w: 0.785116}
+  m_LocalRotation: {x: 0.6796836, y: 0.029534407, z: 0.23057057, w: 0.69569755}
   m_LocalPosition: {x: 373.15, y: 24.24, z: 86.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 40.028004, y: 43.379, z: -649.248}
+  m_LocalEulerAnglesHint: {x: 68.763, y: 78.161, z: -625.207}
 --- !u!1001 &180834058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1777,8 +1777,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  cambiorotazione: {x: 0, y: 0, z: 0, w: 0}
-  rotationspeed: 5
+  astronauta: {fileID: 1044052726}
+  rotaspeed: 10
 --- !u!136 &628081412
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1844,15 +1844,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 628081410}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 8.617, z: 0}
+  m_LocalRotation: {x: -0.21057998, y: -0, z: -0, w: 0.9775766}
+  m_LocalPosition: {x: -0.025, y: 7.46, z: -3.229}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_Children:
   - {fileID: 534669905}
   - {fileID: 1044052726}
   m_Father: {fileID: 0}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -24.313002, y: 0, z: 0}
 --- !u!54 &628081416
 Rigidbody:
   m_ObjectHideFlags: 0
