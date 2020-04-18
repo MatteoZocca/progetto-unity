@@ -22,9 +22,10 @@ public class MovementPlayer : MonoBehaviour
         float movementX = Input.GetAxis("Horizontal"); //salvo input asse X
         float movementY = Input.GetAxis("Vertical"); // salvo input asse Y
         vettoreMovimento = new Vector3(movementX, 0, movementY); // creo un nuovo vettore di movimento 
+        Debug.DrawRay(this.transform.position, vettoreMovimento, Color.red);
         Vector3 vettoreRelativoPlayer = this.transform.TransformDirection(vettoreMovimento);
         float angle = Vector3.SignedAngle(astronauta.forward, vettoreRelativoPlayer, this.transform.up);
-        this.transform.Translate(vettoreMovimento * speed * Time.deltaTime);
+        this.transform.Translate(vettoreMovimento.normalized * speed * Time.deltaTime);
         // traslo l'oggetto in questione per un valore di velocità * una variabile di tempo che varia a seconda del PC.
 
         if (vettoreMovimento != Vector3.zero)
