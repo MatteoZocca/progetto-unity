@@ -8,6 +8,7 @@ public class PauseScene : MonoBehaviour {
     private bool isPaused;
 
     void Start() {
+        Resume();
         isPaused = false;
     }
 
