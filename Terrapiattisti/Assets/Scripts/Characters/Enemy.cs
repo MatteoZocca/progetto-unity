@@ -31,7 +31,6 @@ public class Enemy : MonoBehaviour
         //Debug.DrawRay(this.transform.position, spostamento, Color.red);
         //Debug.DrawRay(this.transform.position, vettoredirezione, Color.red);
         //Debug.DrawRay(Vector3.zero, pianeta.TransformDirection(this.transform.position + vettoredirezione), Color.green);
-        RaycastHit hit;
         //Debug.DrawRay(pianeta.position, (((transform.position - pianeta.position) + vettoredirezione)*2), Color.black);
         Ray raggio = new Ray(pianeta.position,(transform.position - pianeta.position) + vettoredirezione);
 
@@ -49,13 +48,13 @@ public class Enemy : MonoBehaviour
         // posizionprova.y = 0;
         //this.transform.Translate(spostamento.normalized * Time.deltaTime * 5f);
         Vector3 diff = target.position - this.transform.position;
-        
+        this.transform.LookAt(target, transform.up);
         float mag = diff.magnitude;
         if (mag > 1.2f)
         {
 
 
-            this.transform.LookAt(target, transform.up);
+            
             Vector3 prova = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
             this.transform.position = prova;
 
