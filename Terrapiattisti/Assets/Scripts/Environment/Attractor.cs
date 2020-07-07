@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Attractor : MonoBehaviour
 {
-    public float gravity = -10;
+    public static float gravity = -10;
     private Vector3 vettoreTerra;
     void Start()
     {
