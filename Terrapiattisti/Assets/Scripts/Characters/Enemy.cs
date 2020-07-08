@@ -16,7 +16,7 @@ public class Enemy : MonoBehaviour
     [System.Obsolete]
     void Start()
     {
-        animator = GameObject.Find("Cavernicolo").GetComponent<Animator>();
+        animator = this.GetComponent<Animator>();
         speed = Random.RandomRange(3f, 4f);
     }
 
