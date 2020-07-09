@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.39879197, g: 0.51621294, b: 0.74252874, a: 1}
+  m_IndirectSpecularColor: {r: 0.3988881, g: 0.51627684, b: 0.7425727, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -948,6 +948,12 @@ MonoBehaviour:
   m_OriginalMeshObject: {fileID: 4300000, guid: 6a40ae11d7b997b44a45bfb87e57bf77,
     type: 3}
   m_Mode: 0
+--- !u!4 &82674262 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400054, guid: 394ae27d7da639a439ec996e4fad67b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1319154972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &85149418
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4745,6 +4751,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 317005552}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &318031268 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400056, guid: ae91c8183c6c56d4c9c2808fbdaeb634,
+    type: 3}
+  m_PrefabInstance: {fileID: 457128646}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &336387424 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b,
@@ -6881,7 +6893,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &585880594
 Transform:
   m_ObjectHideFlags: 0
@@ -9981,6 +9993,7 @@ GameObject:
   - component: {fileID: 628081417}
   - component: {fileID: 628081418}
   - component: {fileID: 628081419}
+  - component: {fileID: 628081420}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -10121,8 +10134,9 @@ MonoBehaviour:
   ljoystick: {fileID: 991887447}
   rjoystick: {fileID: 1633933157}
   astronauta: {fileID: 0}
-  speed: 5
+  speed: 4
   rotaspeed: 10
+  fermate: 0
 --- !u!95 &628081419
 Animator:
   serializedVersion: 3
@@ -10142,6 +10156,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &628081420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 628081410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 387293901b76ce04da682ba4d12739dc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  metarig: {fileID: 318031268}
+  raggioCattura: 0.3
 --- !u!4 &656441758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5202732821079344928, guid: cebfacc247a640945a2c30b442202fca,
@@ -10491,7 +10519,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &763747999
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36301,6 +36329,16 @@ PrefabInstance:
       propertyPath: handleRange
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: snapX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: snapY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252,
         type: 3}
       propertyPath: m_TagString
@@ -36618,7 +36656,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 394ae27d7da639a439ec996e4fad67b1, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.24814
+      value: -5.083
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 394ae27d7da639a439ec996e4fad67b1, type: 3}
       propertyPath: m_LocalRotation.x
@@ -36654,15 +36692,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 394ae27d7da639a439ec996e4fad67b1, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.04
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 394ae27d7da639a439ec996e4fad67b1, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.04
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 394ae27d7da639a439ec996e4fad67b1, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.04
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 9500000, guid: 394ae27d7da639a439ec996e4fad67b1, type: 3}
       propertyPath: m_Controller
@@ -51593,6 +51631,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 835005187}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2118956898
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2118956899}
+  - component: {fileID: 2118956900}
+  m_Layer: 0
+  m_Name: mani
+  m_TagString: mani
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2118956899
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118956898}
+  m_LocalRotation: {x: -0.84924704, y: 0.00000006294201, z: 0.000000101238115, w: 0.5279957}
+  m_LocalPosition: {x: 0.05, y: 2.84, z: -0.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 82674262}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &2118956900
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2118956898}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &2130925934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2222111361405018444, guid: 88f2fd29f58b9734683512546acec310,
