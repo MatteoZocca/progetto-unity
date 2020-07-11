@@ -12,7 +12,7 @@ public class TouchController : MonoBehaviour
 
     public float speed = 5;
     public float rotaspeed = 10f;
-
+    public bool fermate = false;
     private Vector3 vettoreMovimento;
     private Vector3 forwardIniziale;
     
@@ -33,14 +33,23 @@ public class TouchController : MonoBehaviour
         Vector3 vettoreRelativoPlayer = transform.TransformDirection(vettoreMovimento); //trasforma il vettore locale in globale
         float angle = Vector3.SignedAngle(astronauta.forward, vettoreRelativoPlayer, this.transform.up);
 
+        if(fermate != true)
+        {
+            this.transform.Translate(vettoreMovimento * speed * Time.deltaTime);
+            this.transform.Rotate(0f, rjoystick.Horizontal * 2f, 0);
+            TriggerAnimations();
+        }
+        else
+        {
+            animator.SetBool("isIdle", true);
+            animator.SetBool("isWalking", false);
+            animator.SetBool("isRunning", false);
+        }
 
-        this.transform.Translate(vettoreMovimento * speed * Time.deltaTime);
-        this.transform.Rotate(0f, rjoystick.Horizontal * 2f, 0);
 
         if (vettoreMovimento != Vector3.zero)
             astronauta.Rotate(new Vector3(0f, angle, 0f) * Time.deltaTime * rotaspeed, Space.Self);
 
-        TriggerAnimations();
     }
 
     private void TriggerAnimations() {
