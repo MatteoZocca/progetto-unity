@@ -8,12 +8,14 @@ public class blockPlayer : MonoBehaviour
     public float raggioCattura;
     TouchController touch;
     public Checker checker;
-    private bool checkerDone;    
+    private bool checkerDone;
+    private GameObject joystickdestro;
     // Start is called before the first frame update
     void Start()
     {
         touch = this.GetComponent<TouchController>();
         checker.OnSkillCheckDone.AddListener(checkDone);
+        joystickdestro = GameObject.Find("Floating Joystick");
     }
 
     // Update is called once per frame
@@ -29,6 +31,7 @@ public class blockPlayer : MonoBehaviour
             {
                     touch.fermate = true;
                     checker.gameObject.SetActive(true);
+                    joystickdestro.SetActive(false);
             }
         }
     }
@@ -40,6 +43,7 @@ public class blockPlayer : MonoBehaviour
             checkerDone = true;
             checker.gameObject.SetActive(false);
             touch.fermate = false;
+            joystickdestro.SetActive(true);
             StartCoroutine(staiFermo());
         }
         //do nothing
