@@ -9,13 +9,14 @@ public class blockPlayer : MonoBehaviour
     TouchController touch;
     public Checker checker;
     private bool checkerDone;
-    private GameObject joystickdestro;
+    public GameObject joystickdestro;
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        touch = this.GetComponent<TouchController>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        touch = player.GetComponent<TouchController>();
         checker.OnSkillCheckDone.AddListener(checkDone);
-        joystickdestro = GameObject.Find("Floating Joystick");
     }
 
     // Update is called once per frame
