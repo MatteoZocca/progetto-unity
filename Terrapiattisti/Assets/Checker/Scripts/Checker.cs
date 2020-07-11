@@ -11,6 +11,7 @@ public class Checker : MonoBehaviour
     [SerializeField] private RectTransform _pointer;
     [SerializeField] private RectTransform _skillChecker;
     [SerializeField] private RectTransform _container;
+    [Range(1400,2000)] public int maxSpeed;
 
     [Header("Settings")]
     [SerializeField] private float _minSkillCheckerWidth;
@@ -99,7 +100,11 @@ public class Checker : MonoBehaviour
             {
                 _isGoingToLeft = false;
                 _isGoingToRight = true;
-                _pointer.Translate(new Vector3(_checkerSpeed * tentativi * Time.deltaTime, 0, 0));
+                if(_checkerSpeed * tentativi > maxSpeed)
+                    _pointer.Translate(new Vector3(maxSpeed * Time.deltaTime, 0, 0));
+                else
+                    _pointer.Translate(new Vector3(_checkerSpeed * tentativi * Time.deltaTime, 0, 0));
+
                 yield return null;
             }
 
@@ -109,8 +114,10 @@ public class Checker : MonoBehaviour
             {
                 _isGoingToLeft = true;
                 _isGoingToRight = false;
-                _pointer.Translate(new Vector3(-_checkerSpeed * tentativi * Time.deltaTime, 0, 0));
-                yield return null;
+                if (_checkerSpeed * tentativi > maxSpeed)
+                    _pointer.Translate(new Vector3(-maxSpeed * Time.deltaTime, 0, 0));
+                else
+                    _pointer.Translate(new Vector3(-_checkerSpeed * tentativi * Time.deltaTime, 0, 0)); yield return null;
             }
 
             _isGoingToLeft = false;
