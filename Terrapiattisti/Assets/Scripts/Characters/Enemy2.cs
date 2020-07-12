@@ -8,6 +8,8 @@ public class Enemy2 : MonoBehaviour
     private Vector3 vettoredirezione;
     private Vector3 vettorePosizione;
     public Transform pianeta;
+    private Animator animator;
+
 
     private float speed;
     System.Random rdn;
@@ -15,7 +17,8 @@ public class Enemy2 : MonoBehaviour
     [System.Obsolete]
     void Start()
     {
-        speed = Random.RandomRange(3f, 4f);
+        animator = this.GetComponent<Animator>();
+        speed = Random.RandomRange(2f, 3f);
     }
 
     public void GravityOggetto(Transform body)
@@ -60,10 +63,12 @@ public class Enemy2 : MonoBehaviour
         //this.transform.Translate(spostamento.normalized * Time.deltaTime * 5f);
         Vector3 diff = target.position - this.transform.position;
         float mag = diff.magnitude;
-this.transform.LookAt(target, transform.up);
-        if (mag > 1.2f)
+        if (mag > 0.8f)
         {
-         
+            animator.SetBool("isRunning", true);
+            animator.SetBool("isMena", false);
+            this.transform.LookAt(target, transform.up);
+
             Vector3 prova;
             
                 prova = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
@@ -85,6 +90,8 @@ this.transform.LookAt(target, transform.up);
         }
         else
         {
+            animator.SetBool("isRunning", false);
+            animator.SetBool("isMena", true);
             StartCoroutine(Aspetta());
 
         }
