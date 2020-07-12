@@ -61,6 +61,9 @@ public class Enemy : MonoBehaviour
         // posizionprova.y = 0;
         //this.transform.Translate(spostamento.normalized * Time.deltaTime * 5f);
         Vector3 diff = target.position - this.transform.position;
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Corsa"))
+            this.transform.LookAt(target, transform.up);
+
         float mag = diff.magnitude;
         if (mag > 1.2f)
         {
@@ -71,7 +74,6 @@ public class Enemy : MonoBehaviour
             {
                  prova = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
                  this.transform.position = prova;
-                 this.transform.LookAt(target, transform.up);
 
             }
 
