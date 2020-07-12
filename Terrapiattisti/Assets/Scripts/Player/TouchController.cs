@@ -35,6 +35,7 @@ public class TouchController : MonoBehaviour
 
         if(fermate != true)
         {
+            rjoystick.StopAllCoroutines();
             this.transform.Translate(vettoreMovimento * speed * Time.deltaTime);
             this.transform.Rotate(0f, rjoystick.Horizontal * 2f, 0);
             TriggerAnimations();

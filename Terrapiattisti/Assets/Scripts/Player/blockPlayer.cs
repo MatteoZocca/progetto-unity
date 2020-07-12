@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class blockPlayer : MonoBehaviour
 {
@@ -11,9 +12,11 @@ public class blockPlayer : MonoBehaviour
     private bool checkerDone;
     public GameObject joystickdestro;
     private GameObject player;
+    private Image rjoystick;
     // Start is called before the first frame update
     void Start()
     {
+        rjoystick = joystickdestro.GetComponent<Image>();
         player = GameObject.FindGameObjectWithTag("Player");
         touch = player.GetComponent<TouchController>();
         checker.OnSkillCheckDone.AddListener(checkDone);
@@ -30,9 +33,9 @@ public class blockPlayer : MonoBehaviour
         foreach (Collider coll in hitColliders) {
             if (coll.transform.tag == "mani" && touch.fermate != true)
             {
+                    rjoystick.enabled = false;
                     touch.fermate = true;
                     checker.gameObject.SetActive(true);
-                    joystickdestro.SetActive(false);
             }
         }
     }
@@ -44,8 +47,9 @@ public class blockPlayer : MonoBehaviour
             checkerDone = true;
             checker.gameObject.SetActive(false);
             touch.fermate = false;
-            joystickdestro.SetActive(true);
+            rjoystick.enabled = true;
             StartCoroutine(staiFermo());
+
         }
         //do nothing
     }
