@@ -2,17 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Rotator : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class Rotator : MonoBehaviour {
+    [SerializeField] private Transform pivot;
+    [SerializeField] private float rotateSpeed;
 
-    // Update is called once per frame
-    void Update()
-    {
-        transform.Rotate(0, Time.deltaTime, 0);
+    void Update() {
+        pivot.transform.Rotate(0, Time.deltaTime * rotateSpeed, 0);
     }
 }
