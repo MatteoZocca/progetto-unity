@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private Vector3 vettorePosizione;
     public Transform pianeta;
     private Animator animator;
+   TouchController touch;
 
     private float speed;
     System.Random rdn;
@@ -18,6 +19,9 @@ public class Enemy : MonoBehaviour
     {
         animator = this.GetComponent<Animator>();
         speed = Random.RandomRange(3f, 4f);
+
+        touch = GameObject.FindGameObjectWithTag("Player").GetComponent<TouchController>();
+
     }
 
     public void GravityOggetto(Transform body)
@@ -34,18 +38,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Vector3 posizione = (transform.position - pianeta.position);
 
-       
-        vettoredirezione = (target.transform.position - this.transform.position).normalized;
-        Vector3 vettoreMovimento = (transform.position - pianeta.position) + vettoredirezione;
-        Vector3 spostamento = (vettoreMovimento - posizione);
-        //Debug.DrawRay(this.transform.position, spostamento, Color.red);
-        //Debug.DrawRay(this.transform.position, vettoredirezione, Color.red);
-        //Debug.DrawRay(Vector3.zero, pianeta.TransformDirection(this.transform.position + vettoredirezione), Color.green);
-        //Debug.DrawRay(pianeta.position, (((transform.position - pianeta.position) + vettoredirezione)*2), Color.black);
-        Ray raggio = new Ray(pianeta.position,(transform.position - pianeta.position) + vettoredirezione);
+
+    
 
         /*if(Physics.Raycast(raggio, out hit))
         {

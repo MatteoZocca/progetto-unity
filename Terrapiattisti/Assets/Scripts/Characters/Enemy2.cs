@@ -11,6 +11,7 @@ public class Enemy2 : MonoBehaviour
     private Animator animator;
 
 
+
     private float speed;
     System.Random rdn;
     // Start is called before the first frame update
@@ -63,17 +64,19 @@ public class Enemy2 : MonoBehaviour
         //this.transform.Translate(spostamento.normalized * Time.deltaTime * 5f);
         Vector3 diff = target.position - this.transform.position;
         float mag = diff.magnitude;
-        if (mag > 1f)
+
+        if (mag > 0.8f)
         {
             animator.SetBool("isRunning", true);
             animator.SetBool("isMena", false);
-            this.transform.LookAt(target, transform.up);
 
             Vector3 prova;
             
                 prova = Vector3.MoveTowards(transform.position, target.transform.position, speed * Time.deltaTime);
-                this.transform.position = prova;
-                
+                if(animator.GetCurrentAnimatorStateInfo(0).IsName("metarig|Corsa"))
+                    this.transform.position = prova;
+                this.transform.LookAt(target, transform.up);
+
 
             
 

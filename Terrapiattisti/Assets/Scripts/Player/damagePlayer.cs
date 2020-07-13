@@ -29,7 +29,6 @@ public class damagePlayer : MonoBehaviour
         {
             if (coll.transform.tag == "cartello")
             {
-                Debug.Log("Danno");
                 slider.value -= danno;
             }
         }
