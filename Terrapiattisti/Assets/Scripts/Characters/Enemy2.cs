@@ -63,7 +63,7 @@ public class Enemy2 : MonoBehaviour
         //this.transform.Translate(spostamento.normalized * Time.deltaTime * 5f);
         Vector3 diff = target.position - this.transform.position;
         float mag = diff.magnitude;
-        if (mag > 0.8f)
+        if (mag > 1f)
         {
             animator.SetBool("isRunning", true);
             animator.SetBool("isMena", false);
