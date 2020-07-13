@@ -13,7 +13,22 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: billboardLower
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: _defaultMat
+    second: {fileID: 2100000, guid: 57b5d4e55c5e6d7428ec3c6c12b3fa22, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grey
+    second: {fileID: 2100000, guid: 8e71da5aca0301f459ae8b31755132aa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: tankco
+    second: {fileID: 2100000, guid: ec5b0436330a5cd40942086b87ac18a5, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
