@@ -12,13 +12,14 @@ public class damagePlayer : MonoBehaviour
     public float danno;
     TouchController touch;
     private Slider slider;
+    private AudioSource audioSource;
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         lifebar = GameObject.Find("lifebar");
         touch = player.GetComponent<TouchController>();
         slider = lifebar.GetComponent<Slider>();
-
+        audioSource = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,8 @@ public class damagePlayer : MonoBehaviour
         {
             if (coll.transform.tag == "cartello")
             {
+                //suono
+                audioSource.Play();
                 slider.value -= danno;
             }
         }
