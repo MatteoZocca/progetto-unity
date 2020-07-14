@@ -14,11 +14,12 @@ public class Rocket : MonoBehaviour
     public GameObject camera1;
     private List<GameObject> nemici;
     public GameObject canvasVittoria;
+    public GameObject fuocoRazzo;
+    public GameObject fumo;
     void Start()
     {
         cb = chargingBar.GetComponent<ChargingBar>();
         animazione = this.GetComponent<Animator>();
-        
     }
 
     // Update is called once per frame
@@ -51,6 +52,8 @@ public class Rocket : MonoBehaviour
                     camera1.SetActive(true);                   
                     entrato = true;
                     animazione.SetBool("isPartenza", true);
+                    fuocoRazzo.SetActive(true);
+                    fumo.SetActive(true);
                 }
             }
         }
