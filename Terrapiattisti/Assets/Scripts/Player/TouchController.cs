@@ -42,9 +42,10 @@ public class TouchController : MonoBehaviour
         }
         else
         {
-            animator.SetBool("isIdle", true);
+            animator.SetBool("isPlaccato", true);
             animator.SetBool("isWalking", false);
             animator.SetBool("isRunning", false);
+            animator.SetBool("isIdle", false);
         }
 
 
@@ -58,17 +59,22 @@ public class TouchController : MonoBehaviour
             animator.SetBool("isRunning", true);
             animator.SetBool("isWalking", false);
             animator.SetBool("isIdle", false);
+            animator.SetBool("isPlaccato", false);
         }
         else if (vettoreMovimento.x == 0 && vettoreMovimento.z == 0) {
             animator.SetBool("isIdle", true);
             animator.SetBool("isWalking", false);
             animator.SetBool("isRunning", false);
+            animator.SetBool("isPlaccato", false);
+
         }
 
         else if (vettoreMovimento.x != 0 && vettoreMovimento.z != 0) {
             animator.SetBool("isIdle", false);
             animator.SetBool("isWalking", true);
             animator.SetBool("isRunning", false);
+            animator.SetBool("isPlaccato", false);
+
         }
     }
 }

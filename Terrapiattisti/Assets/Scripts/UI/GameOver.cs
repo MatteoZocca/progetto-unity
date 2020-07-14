@@ -11,10 +11,12 @@ public class GameOver : MonoBehaviour
     public GameObject panel;
     public GameObject checkBar;
     private bool vivo;
+    private Animator animator;
     void Start()
     {
         slider = GameObject.Find("lifebar").GetComponent<Slider>();
         pausa = GameObject.Find("MenuButton").GetComponent<PauseScene>();
+        animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         vivo = true;
     }
 
@@ -23,8 +25,14 @@ public class GameOver : MonoBehaviour
     {
         if (slider.value == 0 && vivo)
         {
+            animator.SetBool("isMorto", true);
             vivo = false;
             checkBar.SetActive(false);
+            
+        
+        }
+        if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f && animator.GetCurrentAnimatorStateInfo(0).IsName("Morto"))
+        {
             panel.SetActive(true);
             pausa.Pause();
         }
