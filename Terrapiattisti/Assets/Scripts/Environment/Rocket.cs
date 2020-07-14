@@ -13,6 +13,7 @@ public class Rocket : MonoBehaviour
     private bool entrato = false;
     public GameObject camera1;
     private List<GameObject> nemici;
+    public GameObject canvasVittoria;
     void Start()
     {
         cb = chargingBar.GetComponent<ChargingBar>();
@@ -33,10 +34,16 @@ public class Rocket : MonoBehaviour
                     foreach(GameObject nemico in GameObject.FindGameObjectsWithTag("nemico"))
                     {
                         if (nemico.GetComponent<Enemy>() != null)
+                        {
                             nemico.GetComponent<Enemy>().finelivello = true;
-                        
+                            nemico.GetComponent<blockPlayer>().enabled = false;
+                        }
                         else if (nemico.GetComponent<Enemy2>() != null)
-                                nemico.GetComponent<Enemy2>().finelivello = true;
+                        {
+                            nemico.GetComponent<Enemy2>().finelivello = true;
+                            nemico.GetComponent<damagePlayer>().enabled = false;
+
+                        }
                     }
                     GameObject.Find("Canvas").GetComponent<Canvas>().enabled = false;
                     GameObject.Find("Main Camera").SetActive(false);
@@ -50,14 +57,7 @@ public class Rocket : MonoBehaviour
 
         if (animazione.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f && animazione.GetCurrentAnimatorStateInfo(0).IsName("Razzo|RazzoAction"))
         {
-            GameObject.Find("ChargingBar").SetActive(false);
-            GameObject.Find("Fixed Joystick").SetActive(false);
-            GameObject.Find("Floating Joystick").SetActive(false);
-            GameObject.Find("lifebar").SetActive(false);
-
-            GameObject.Find("Canvas").GetComponent<Canvas>().enabled = true;
-
-
+            canvasVittoria.SetActive(true);
         }
     }
 
