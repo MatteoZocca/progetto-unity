@@ -19,7 +19,7 @@ public class ChargingBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (this.GetComponent<Slider>().value == 1)
+        if (this.GetComponent<Slider>().value == this.GetComponent<Slider>().maxValue)
             razzoDisponibile = true;
 
         this.GetComponent<Slider>().value += Time.deltaTime / difficultyPercentage;

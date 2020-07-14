@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene/MainScene.unity
     guid: aec7212d5b707c3479a091ebca1defae
+  - enabled: 1
+    path: Assets/Scenes/MainScene/Livello 2.unity
+    guid: df3fc4f714cc2924e8856767336ec1c0
   m_configObjects: {}
