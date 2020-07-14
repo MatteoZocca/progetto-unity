@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 33738030831135654}
   - component: {fileID: 23468792291046216}
   - component: {fileID: 65628676450711718}
-  - component: {fileID: 114504625821932792}
   m_Layer: 0
   m_Name: Axe
   m_TagString: Untagged
@@ -92,23 +91,3 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0025718287, y: 0.0006159918, z: 0.007117403}
   m_Center: {x: 0.0010069576, y: -5.626814e-12, z: 0.0036160748}
---- !u!114 &114504625821932792
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1691237590736490}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 97c1a24564ef11846987775cdcafe848, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Axe
-  Image: {fileID: 21300000, guid: dc148f9c15576d9499ca1b6e89e41f82, type: 3}
-  InteractText: Press F to pickup the axe
-  ItemType: 2
-  PickPosition: {x: 0.00057, y: 0.00038, z: -0.00081}
-  PickRotation: {x: -20.35, y: -13.499, z: 76.878}
-  DropRotation: {x: -4.263, y: -3.489, z: -2.46}
-  UseItemAfterPickup: 1

@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneChanger : MonoBehaviour {
     public void ChangeScene(string sceneName) {
+
+        Time.timeScale = 1f;
         SceneManager.LoadScene(sceneName);
-        Time.timeScale = 1;
+        
     }
 }
