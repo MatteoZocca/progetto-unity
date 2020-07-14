@@ -16,10 +16,12 @@ public class Rocket : MonoBehaviour
     public GameObject canvasVittoria;
     public GameObject fuocoRazzo;
     public GameObject fumo;
+    public AudioSource suono;
     void Start()
     {
         cb = chargingBar.GetComponent<ChargingBar>();
         animazione = this.GetComponent<Animator>();
+        suono = this.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -54,6 +56,7 @@ public class Rocket : MonoBehaviour
                     animazione.SetBool("isPartenza", true);
                     fuocoRazzo.SetActive(true);
                     fumo.SetActive(true);
+                    suono.Play();
                 }
             }
         }

@@ -31,7 +31,7 @@ public class MaterialAssigner : MonoBehaviour
 
     private int getRandom()
     {
-        int i = Random.Range(1, 4);
+        int i = Random.Range(1, 5);
         return i;
     }
 }
