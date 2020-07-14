@@ -33,6 +33,7 @@ public class GameOver : MonoBehaviour
         }
         if (animator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1f && animator.GetCurrentAnimatorStateInfo(0).IsName("Morto"))
         {
+            //ciaao
             panel.SetActive(true);
             pausa.Pause();
         }
