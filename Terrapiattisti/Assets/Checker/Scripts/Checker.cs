@@ -17,7 +17,7 @@ public class Checker : MonoBehaviour
     [SerializeField] private float _minSkillCheckerWidth;
     [SerializeField] private float _maxSkillCheckerWidth;
     [SerializeField] private float _checkerSpeed;
-    private static int tentativi = 1;
+    private  int tentativi = 1;
     [SerializeField] private bool _restartAfterInput;
     [SerializeField] private float _timeToWaitAfterInput;
     private Vector2 defaultArrowposition;

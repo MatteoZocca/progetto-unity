@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     private Vector3 vettorePosizione;
     public Transform pianeta;
     private Animator animator;
+    public bool finelivello = false;
    TouchController touch;
 
     private float speed;
@@ -39,7 +40,8 @@ public class Enemy : MonoBehaviour
     void Update()
     {
 
-
+        if (finelivello)
+            target = GameObject.Find("LP_Rocket(Polybrush Clone)").transform;
     
 
         /*if(Physics.Raycast(raggio, out hit))

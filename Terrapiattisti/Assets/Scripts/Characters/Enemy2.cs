@@ -9,6 +9,7 @@ public class Enemy2 : MonoBehaviour
     private Vector3 vettorePosizione;
     public Transform pianeta;
     private Animator animator;
+    public bool finelivello = false;
 
 
 
@@ -36,6 +37,8 @@ public class Enemy2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(finelivello)
+            target = GameObject.Find("LP_Rocket(Polybrush Clone)").transform;
 
         Vector3 posizione = (transform.position - pianeta.position);
 

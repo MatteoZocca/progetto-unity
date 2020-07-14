@@ -7,6 +7,7 @@ TagManager:
   - Joystick
   - mani
   - cartello
+  - nemico
   layers:
   - Default
   - TransparentFX
