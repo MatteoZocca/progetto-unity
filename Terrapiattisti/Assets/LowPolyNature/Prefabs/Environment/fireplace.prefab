@@ -4760,7 +4760,6 @@ GameObject:
   - component: {fileID: 33625834477072472}
   - component: {fileID: 23814414231217120}
   - component: {fileID: 65249815690425142}
-  - component: {fileID: 114783750157478970}
   m_Layer: 0
   m_Name: fireplace
   m_TagString: Untagged
@@ -4842,21 +4841,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.68, y: 0.46, z: 0.79}
   m_Center: {x: -0.011383534, y: 0.19825524, z: 0.054589003}
---- !u!114 &114783750157478970
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1661447213762934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd38a9f77a354344a5a8ae183640bd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DamageRepeatRate: 0.1
-  DamageAmount: 1
-  Repeating: 1
 --- !u!1 &1711917331786228
 GameObject:
   m_ObjectHideFlags: 0

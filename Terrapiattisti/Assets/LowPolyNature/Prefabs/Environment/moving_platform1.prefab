@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3278421885576446504}
   - component: {fileID: 3278421885577576680}
   - component: {fileID: 3278421885907103236}
-  - component: {fileID: 196510650}
   - component: {fileID: 1097484176}
   m_Layer: 0
   m_Name: moving_platform1
@@ -94,22 +93,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 0
   m_Mesh: {fileID: 4300000, guid: 4ff6367568c0feb4aa37dbafc1e4a949, type: 3}
---- !u!114 &196510650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3278421885575323176}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 231ecf68504e1274f9f8f6f8d3637e89, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 4
-  Positions:
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!54 &1097484176
 Rigidbody:
   m_ObjectHideFlags: 0
