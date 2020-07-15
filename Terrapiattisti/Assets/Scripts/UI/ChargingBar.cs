@@ -8,33 +8,34 @@ public class ChargingBar : MonoBehaviour
     public bool razzoDisponibile = false;
     public float difficulty;
     private float difficultyPercentage;
-    private bool nonattivato;
+    private bool nonAttivato;
     public GameObject readyPanel;
     // Start is called before the first frame update
     void Start()
     {
         this.GetComponent<Slider>().value = 0;
-        difficulty = 1;
+        difficulty = SceneChanger.currentLevel;
         difficultyPercentage = 50 * difficulty;
-        nonattivato = true;
+        nonAttivato = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(SceneChanger.currentLevel);
         if (this.GetComponent<Slider>().value == this.GetComponent<Slider>().maxValue)
             razzoDisponibile = true;
 
-        if (razzoDisponibile && nonattivato)//display ready se razzo prontu 
+        if (razzoDisponibile && nonAttivato)//display ready se razzo prontu 
         {
             readyPanel.SetActive(true);
            
-           nonattivato = false;
+           nonAttivato = false;
         }
 
         this.GetComponent<Slider>().value += Time.deltaTime / difficultyPercentage;
 
-
+        Debug.Log(SceneChanger.currentLevel);
 
     }
 }

@@ -51,7 +51,7 @@ public class Checker : MonoBehaviour
         _isActive = true;
         _ySkillChecker = _skillChecker.sizeDelta.y;
         gameObject.SetActive(_isActive);
-        Debug.Log("Container width " + _container.sizeDelta);
+        //Debug.Log("Container width " + _container.sizeDelta);
         RandomizePositionAndWidth();
         StartCoroutine(MovePointer());
     }

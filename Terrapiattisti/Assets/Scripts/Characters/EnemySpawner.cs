@@ -46,7 +46,7 @@ public class EnemySpawner : MonoBehaviour
                     spawnScelto = spawn;
                 }
             }
-            Debug.Log("Spawno nemico n°: " + countNemici + " in posizione : " + punto);
+            //Debug.Log("Spawno nemico n°: " + countNemici + " in posizione : " + punto);
             Instantiate(terrapiattista, spawnScelto.position, Quaternion.identity);
             yield return new WaitForSeconds(timeToSpawn);
             countNemici++;
