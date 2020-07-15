@@ -25,6 +25,8 @@ public class damagePlayer : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        if (ParallaxGameManager.Instance.IsPaused) return;
+
         Collider[] hitColliders = Physics.OverlapSphere(testa.position, raggioCattura);
         foreach (Collider coll in hitColliders)
         {

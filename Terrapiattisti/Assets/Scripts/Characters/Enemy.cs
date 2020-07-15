@@ -42,7 +42,6 @@ public class Enemy : MonoBehaviour
 
         if (finelivello)
             target = GameObject.Find("LP_Rocket(Polybrush Clone)").transform;
-    
 
         /*if(Physics.Raycast(raggio, out hit))
         {

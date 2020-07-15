@@ -5,9 +5,7 @@ using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour
 {
-    // Start is called before the first frame update
     private Slider slider;
-    private PauseScene pausa;
     public GameObject panel;
     public GameObject checkBar;
     private bool vivo;
@@ -16,7 +14,6 @@ public class GameOver : MonoBehaviour
     void Start()
     {
         slider = GameObject.Find("lifebar").GetComponent<Slider>();
-        pausa = GameObject.Find("MenuButton").GetComponent<PauseScene>();
         animator = GameObject.FindGameObjectWithTag("Player").GetComponent<Animator>();
         vivo = true;
     }
@@ -38,7 +35,7 @@ public class GameOver : MonoBehaviour
             {
                 entrato = false;
                 panel.SetActive(true);
-                pausa.Pause();
+                ParallaxGameManager.Instance.PauseGame();
             }
             
         }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rocket : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public bool IsEnter => entrato;
 
     public GameObject chargingBar;
     private ChargingBar cb;
@@ -17,6 +17,7 @@ public class Rocket : MonoBehaviour
     public GameObject fuocoRazzo;
     public GameObject fumo;
     public AudioSource suono;
+
     void Start()
     {
         cb = chargingBar.GetComponent<ChargingBar>();
@@ -27,6 +28,8 @@ public class Rocket : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (ParallaxGameManager.Instance.IsPaused) return;
+
         if (cb.razzoDisponibile)
         {
             Collider[] hitColliders = Physics.OverlapSphere(transform.position, raggioCattura);
@@ -34,7 +37,7 @@ public class Rocket : MonoBehaviour
             {
                 if (coll.transform.tag == "Player" && entrato == false)
                 {
-                    foreach(GameObject nemico in GameObject.FindGameObjectsWithTag("nemico"))
+                    foreach (GameObject nemico in GameObject.FindGameObjectsWithTag("nemico"))
                     {
                         if (nemico.GetComponent<Enemy>() != null)
                         {
@@ -51,7 +54,7 @@ public class Rocket : MonoBehaviour
                     GameObject.Find("Canvas").GetComponent<Canvas>().enabled = false;
                     GameObject.Find("Main Camera").SetActive(false);
                     GameObject.Find("Astronauta").SetActive(false);
-                    camera1.SetActive(true);                   
+                    camera1.SetActive(true);
                     entrato = true;
                     animazione.SetBool("isPartenza", true);
                     fuocoRazzo.SetActive(true);

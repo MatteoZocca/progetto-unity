@@ -2,25 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HideAndShow : MonoBehaviour {
+public class HideAndShow : MonoBehaviour
+{
     [SerializeField] private GameObject UIObject = null;
-    private bool isActive;
+    [SerializeField] private bool _deactivateOnStart;
 
-    void Start() {
-        isActive = false;
-        this.UIObject.SetActive(isActive);
+    void Start()
+    {
+        if (_deactivateOnStart)
+            UIObject.SetActive(false);
     }
 
-    public void Toggle() {
-        isActive = !isActive;
-        this.UIObject.SetActive(isActive);
+    public void Toggle()
+    {
+        UIObject.SetActive(!UIObject.activeInHierarchy);
     }
 
-    public void Hide() {
-        this.UIObject.SetActive(false);
-    }
-
-    public void Show() {
-        this.UIObject.SetActive(true);
-    }
 }
