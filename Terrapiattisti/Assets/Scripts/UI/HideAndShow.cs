@@ -15,4 +15,12 @@ public class HideAndShow : MonoBehaviour {
         isActive = !isActive;
         this.UIObject.SetActive(isActive);
     }
+
+    public void Hide() {
+        this.UIObject.SetActive(false);
+    }
+
+    public void Show() {
+        this.UIObject.SetActive(true);
+    }
 }
