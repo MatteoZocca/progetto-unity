@@ -23,6 +23,7 @@ public class GameOver : MonoBehaviour
     {
         if (slider.value == 0 && vivo)
         {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<TouchController>().fermate = true;
             animator.SetBool("isMorto", true);
             vivo = false;
             checkBar.SetActive(false);
