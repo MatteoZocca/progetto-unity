@@ -25,7 +25,7 @@ public void ClickShare()
 		Destroy(ss);
 
 		new NativeShare().AddFile(filePath)
-			.SetSubject("Games").SetText("I'm the number one! I've scored " + Time.timeSinceLevelLoad.ToString("2F"))
+			.SetSubject("Games").SetText("I'm the number one! I've scored " + Time.timeSinceLevelLoad.ToString("F2"))
 			.SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
 			.Share();
 
