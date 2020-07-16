@@ -58,8 +58,8 @@ public class ChargingBar : MonoBehaviour
     {
         while (_slider.value < timeToWait)
         {
-            _slider.value += 1f;
-            yield return new WaitForSeconds(1);
+            _slider.value += 0.1f;
+            yield return new WaitForSeconds(0.1f);
         }
 
         razzoDisponibile = true;
