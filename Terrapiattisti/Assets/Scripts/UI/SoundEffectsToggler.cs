@@ -16,7 +16,7 @@ public class SoundEffectsToggler : MonoBehaviour
     private GameObject[] GetObjectsWithSound() {
         GameObject[] objects = GameObject.FindObjectsOfType<GameObject>();
         for (int i = 0; i < objects.Length; i++) {
-            if (objects[i].GetComponent<AudioSource>() == null)
+            if (objects[i].GetComponent<AudioSource>() == null || objects[i].name == "Jukebox")
                 objects[i] = null;
         }
         return objects;
@@ -28,5 +28,9 @@ public class SoundEffectsToggler : MonoBehaviour
                 objectsWithSoundEffects[i].GetComponent<AudioSource>().mute = status;
             }
         }
+    }
+
+    public void Update() {
+        status = this.GetComponent<Toggle>().isOn;
     }
 }
