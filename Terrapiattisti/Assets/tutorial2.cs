@@ -71,6 +71,7 @@ public class tutorial2 : MonoBehaviour
             GameObject.Find("BackgroundLifeBar").GetComponent<Image>().enabled = true;
             GameObject.Find("FillLife").GetComponent<Image>().enabled = true;
             Cavernicolo.SetActive(true);
+            FloatingJoystick.SetActive(true);
             EnemySpawner2.SetActive(true);
             CavernicoloCartello.SetActive(true);
             EnemySpawner.SetActive(true);
