@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class SkillCheck : MonoBehaviour
 {
-    public event Action OnSkillCheckFail, OnSkillCkeckGood, OnSkillCheckGreat;
+    public event Action OnSkillCheckFail, OnSkillCkeckGood;
 
     [Range(1, 50)]
     [SerializeField] private int arrowRotationSpeed = 30;
