@@ -13,12 +13,7 @@ public class tutorial2 : MonoBehaviour
     public GameObject Cavernicolo;
     public GameObject EnemySpawner;
     public Checker checker;
-    private bool finito = false;
-    private bool finito1 = false;
-    private bool finito2 = false;
-    private bool finito3 = false;
-    private bool finito4 = false;
-    private bool checkerDone = false;
+    
 
     void Start()
     {
@@ -65,7 +60,6 @@ public class tutorial2 : MonoBehaviour
     {
         if (done)
         {
-            checkerDone = true;
             checker.gameObject.SetActive(false);
             panel1.SetActive(false);
             GameObject.Find("Icon").GetComponent<RawImage>().enabled = true;
