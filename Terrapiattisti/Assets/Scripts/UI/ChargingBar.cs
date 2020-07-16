@@ -13,7 +13,6 @@ public class ChargingBar : MonoBehaviour
     private TextMeshProUGUI _timerText;
     [SerializeField]
     private float timeToWait;
-    private bool nonAttivato;
     public Rocket rocket;
     public GameObject readyPanel;
 
@@ -35,8 +34,7 @@ public class ChargingBar : MonoBehaviour
         //    Debug.LogError($"Parse non riuscito {ParallaxSceneManager.Instance.SceneLoaded}");
         //    difficultyPercentage = 50;
         //}
-        nonAttivato = true;
-        StartCoroutine(WaitBar());
+        //StartCoroutine(WaitBar());
     }
 
     // Update is called once per frame
@@ -46,27 +44,25 @@ public class ChargingBar : MonoBehaviour
 
         _timerText?.SetText($"Time : {Time.timeSinceLevelLoad.ToString("F2")}");
 
-        if (razzoDisponibile && nonAttivato)//display ready se razzo prontu 
+        if (_slider.value < timeToWait)
+        {
+            _slider.value += Time.deltaTime;
+        }
+        else
+        {
+            if(!razzoDisponibile)
+                razzoDisponibile = true;
+
+        }
+
+
+
+        if (razzoDisponibile)//display ready se razzo prontu 
         {
             readyPanel.SetActive(true);
 
-            nonAttivato = false;
         }
     }
 
-    IEnumerator WaitBar()
-    {
-        while (_slider.value < timeToWait)
-        {
-            _slider.value += 0.1f;
-            yield return new WaitForSeconds(0.1f);
-        }
-
-        razzoDisponibile = true;
-    }
-
-    private void OnDestroy()
-    {
-        StopAllCoroutines();
-    }
+   
 }
