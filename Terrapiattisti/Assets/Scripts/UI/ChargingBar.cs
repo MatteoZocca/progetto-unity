@@ -42,6 +42,9 @@ public class ChargingBar : MonoBehaviour
     {
         if (rocket != null && rocket.IsEnter) return;
 
+        if (ParallaxSceneManager.Instance.isLoading || ParallaxGameManager.Instance.IsPaused)
+            return;
+
         _timerText?.SetText($"Time : {Time.timeSinceLevelLoad.ToString("F2")}");
 
         if (_slider.value < timeToWait)

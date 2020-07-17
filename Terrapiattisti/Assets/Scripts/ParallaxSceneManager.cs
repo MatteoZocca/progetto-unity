@@ -8,6 +8,8 @@ public class ParallaxSceneManager : Singleton<ParallaxSceneManager>
 {
     public string SceneLoaded => _sceneCurrentLoaded;
 
+    public bool isLoading { get; private set; }
+
     private string _sceneCurrentLoaded;
 
     private void Awake()
@@ -27,10 +29,15 @@ public class ParallaxSceneManager : Singleton<ParallaxSceneManager>
 
     IEnumerator ChangeScene(string sceneName,Action onComplete)
     {
+        isLoading = true;
+
+
         yield return SceneManager.LoadSceneAsync(sceneName).isDone;
 
         _sceneCurrentLoaded = sceneName;
+        
 
         onComplete?.Invoke();
+        isLoading = false;
     }
 }

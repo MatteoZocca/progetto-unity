@@ -18,7 +18,7 @@ public class ParallaxGameManager : Singleton<ParallaxGameManager>
 
     private void SceneChanged(Scene oldScene, Scene newScene)
     {
-        _isPaused = false;
+        StartCoroutine(aspetta());
     }
 
     public void PauseGame()
@@ -31,5 +31,11 @@ public class ParallaxGameManager : Singleton<ParallaxGameManager>
         }
         else
             Time.timeScale = 1;
+    }
+
+    IEnumerator aspetta()
+    {
+        yield return new WaitForSeconds(2f);
+        _isPaused = false;
     }
 }
