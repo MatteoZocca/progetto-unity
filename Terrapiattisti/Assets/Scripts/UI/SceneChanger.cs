@@ -1,13 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class SceneChanger : MonoBehaviour
-{
+public class SceneChanger : MonoBehaviour {
     public void ChangeScene(string sceneName)
     {
         ParallaxSceneManager.Instance.LoadScene(sceneName,SceneLoaded);
+    }
+
+    public void ChangeScene() {
+        string levelName = this.GetComponent<UnityEngine.UI.Text>().text[6].ToString();
+        ChangeScene(levelName);
     }
 
     public void Retry()

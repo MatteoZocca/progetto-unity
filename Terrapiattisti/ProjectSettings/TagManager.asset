@@ -8,6 +8,8 @@ TagManager:
   - mani
   - cartello
   - nemico
+  - Incrementer
+  - Decrementer
   layers:
   - Default
   - TransparentFX
