@@ -3,3 +3,6 @@ Escape Game in terza persona ambientato in un mondo parallelo dove i Terrapiatti
 
 <img align="center" src="https://media.giphy.com/media/eiLnOxBQYCLhArzMYA/giphy.gif" width="800" height="370" />
 <p style="text-align:center;"><img src="https://media.giphy.com/media/eiLnOxBQYCLhArzMYA/giphy.gif" width="800" height="370" /></p>
+<p align="center">
+  <img width="800" height="370" src="https://media.giphy.com/media/eiLnOxBQYCLhArzMYA/giphy.gif">
+</p>
