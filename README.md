@@ -4,3 +4,11 @@ Escape Game in terza persona ambientato in un mondo parallelo dove i Terrapiatti
 <p align="center">
   <img width="800" height="370" src="https://media.giphy.com/media/eiLnOxBQYCLhArzMYA/giphy.gif">
 </p>
+
+# Gameplay
+
+Lo scopo del gioco è riuscire a partire col razzo mentre i Terrapiattisti provano a fermarti. Con l'avanzare dei livelli la difficoltà aumenta.
+
+<p align="center">
+  <img width="800" height="370" src="https://media.giphy.com/media/eiLnOxBQYCLhArzMYA/giphy.gif">
+</p>
