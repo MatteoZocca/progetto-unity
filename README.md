@@ -12,3 +12,7 @@ Lo scopo del gioco è riuscire a partire col razzo mentre i Terrapiattisti prova
 <p align="center">
   <img width="800" height="370" src="https://media.giphy.com/media/TJxCpG2jOrdAh5Xqmn/giphy.gif">
 </p>
+
+# Video
+Un breve gameplay è disponibile al seguente link:
+https://www.youtube.com/watch?v=TrnRDUk8gxI&t=194s
